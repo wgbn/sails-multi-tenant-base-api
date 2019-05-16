@@ -73,6 +73,7 @@ module.exports.models = {
     updatedAt: { type: 'number', autoUpdatedAt: true, },
     // id: { type: 'number', autoIncrement: true, },
     id: { type: 'string', columnName: '_id' },
+    tenant: { type: 'string', required: true },
     //--------------------------------------------------------------------------
     //  /\   Using MongoDB?
     //  ||   Replace `id` above with this instead:

@@ -48,8 +48,9 @@ module.exports.datastores = {
     *    (See https://sailsjs.com/config/datastores for help.)                 *
     *                                                                          *
     ***************************************************************************/
-    // adapter: 'sails-mysql',
-    // url: 'mysql://user:password@host:port/database',
+    // adapter: 'sails-mongo',
+    // url: process.env.MONGO_URL
+    // url: 'mongodb://fazendadb:7eUfHpfgvVG44m@base.saudecrm.com.br:27017/fazendadb',
 
   },
 
