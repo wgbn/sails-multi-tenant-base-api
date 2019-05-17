@@ -27,4 +27,8 @@ module.exports.policies = {
       signup: true
   },
 
+  TenantController: {
+    register: true
+  },
+
 };

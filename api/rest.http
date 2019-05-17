@@ -1,0 +1,35 @@
+# POST http://localhost:3000/auth/email HTTP/1.1
+# content-type: application/json
+
+# {
+#     "email": "theo7@wgbn.com.br",
+#     "password": "1234"
+# }
+
+GET http://localhost:3000/user?email=theo7@wgbn.com.br HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNWNkZGY1YzA2NWUxOTIxNWYxNmU4MDI4IiwiaWF0IjoxNTU4MDU0MDUzLCJleHAiOjE1NTgwODQwNTN9.2AxzJvLuiR6pTJATgubcKs1UtDZiJKuInLA__03DtYg
+
+# POST http://localhost:3000/tenant/register HTTP/1.1
+# content-type: application/json
+
+# {
+#     "user": {
+#         "email": "theo@wgbn.com.br",
+#         "password": "1234",
+#         "nome": "Theo Gandarella"
+#     },
+#     "tenant": {
+#         "nome":"Theo Fotografia LTDA",
+#         "nomeFantasia":"Theo Fotografia"
+#     }
+# }
+
+# POST http://localhost:3000/user/signup HTTP/1.1
+# content-type: application/json
+
+# {
+#     "signupType": "email",
+#     "email": "theo7@wgbn.com.br",
+#     "password": "1234",
+#     "nome": "teste"
+# }

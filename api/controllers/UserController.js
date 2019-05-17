@@ -16,7 +16,7 @@ module.exports = {
             try {
                 switch(req.body.signupType) {
                     case 'email':
-                        const email = await signupEmail(req.body);
+                        const email = await UserService.signupEmail(req.body);
                         return email !== false ? res.json(email) : res.noparam();
 
                     case 'facebook':
@@ -42,7 +42,7 @@ module.exports = {
 
 };
 
-const signupEmail = async body => {
+/*const signupEmail = async body => {
     if (body.email && body.password && body.nome) {
         const {nome, email, password} = body;
 
@@ -74,4 +74,4 @@ const signupEmail = async body => {
         return false;
     }
 
-};
+};*/

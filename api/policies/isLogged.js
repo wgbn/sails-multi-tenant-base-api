@@ -23,20 +23,14 @@ module.exports = async function(req, res, next) {
                 return res.send({status: 401, statusText: 'Não está logado: usuário não possui ID'});
             }
             // Caso contrário, tente procurar esse usuário
-            User.findOne(payload.user, (err, user) => {
-                if (err) {
-                    res.status(401);
-                    return res.send({status: 401, statusText: 'Não está logado: usuário não foi encontrado'});
-                }
-                // Se o usuário não puder ser encontrado, nega o acesso
-                if (!user) {
-                    res.status(401);
-                    return res.send({status: 401, statusText: 'Não está logado: usuário não foi encontrado'});
-                }
-                // Caso contrário, salve o objeto do usuário no pedido (ou seja, "log in") e continue
-                req.user = user;
-                return next();
-            });
+            const user = await User.findOne(payload.user);
+            if (!user) {
+                res.status(401);
+                return res.send({status: 401, statusText: 'Não está logado: usuário não foi encontrado'});
+            }
+            // Caso contrário, salve o id do tenant no pedido e continue
+            req.tenant = user.tenant;
+            return next();
 
         } catch(e) {
             res.status(401);
